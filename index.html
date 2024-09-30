@@ -100,9 +100,159 @@
                 </div>
             </div>
         </section>
+        <section class="last_section container">
+          <h4>Legal Aids with REALEZI</h4>
+          <div class="multi_descriptions_wrapper">
+            <div class="multi_descriptions_child">
+              <div class="multi_descriptions_image_container">
+                <img src="./assets/desc_lists/image1.png" alt="">
+              </div>
+              <h3>Leese Agreement</h3>
+              <div class="multi_descriptions_image_descriptions">
+                <p>A legal contract between a lessor and lessee
+                  Constitutes all requisites when a lessor engages with a lessee
+                  Allows the lessee to rent a property for a certain period</p>
+              </div>
+            </div>
+            <div class="multi_descriptions_child">
+              <div class="multi_descriptions_image_container">
+                <img src="./assets/desc_lists/image2.png" alt="">
+              </div>
+              <h3>Sale Agreement
+              </h3>
+              <div class="multi_descriptions_image_descriptions">
+                <p>Includes all the regulations about the sale of a property
+                  Executed by a developer or a seller
+                  Constitutes all financial terms</p>
+              </div>
+            </div>
+            <div class="multi_descriptions_child">
+              <div class="multi_descriptions_image_container">
+                <img src="./assets/desc_lists/image3.png" alt="">
+              </div>
+              <h3>Legal Power of Attorney
+              </h3>
+              <div class="multi_descriptions_image_descriptions">
+                <p>Gives an attorney-in-charge the authority to act for specific rights 
+                  Issued for consideration or interest for a fixed period of time.
+                  Incompetent to eliminate the lack of payment capacity
+                  </p>
+              </div>
+            </div>
+            <div class="multi_descriptions_child">
+              <div class="multi_descriptions_image_container">
+                <img src="./assets/desc_lists/image4.png" alt="">
+              </div>
+              <h3>Sustainable & Green Design 
+              </h3>
+              <div class="multi_descriptions_image_descriptions">
+                <p>Shape the cities of tomorrow with our visionary urban planning solutions, blending sustainability and community needs.</p>
+              </div>
+            </div>
+            <div class="multi_descriptions_child">
+              <div class="multi_descriptions_image_container">
+                <img src="./assets/desc_lists/image5.png" alt="">
+              </div>
+              <h3>Property Complaints
+              </h3>
+              <div class="multi_descriptions_image_descriptions">
+                <p>Includes assessment of the complaint and the best route to take
+                  Sends legal letter to the Developer / Seller for refunds / Settlement
+                  Files case in appropriate courts - RERA, Consumer, NCLT, Arbitration</p>
+              </div>
+            </div>
+            <div class="multi_descriptions_child">
+              <div class="multi_descriptions_image_container">
+                <img src="./assets/desc_lists/image6.png" alt="">
+              </div>
+              <h3>Legal Document Review
+              </h3>
+              <div class="multi_descriptions_image_descriptions">
+                <p>Recommended for property buyers 
+                  Legal documents are reviewed by an in -house expert 
+                  Analyses property documents and compliance issues
+                  </p>
+              </div>
+            </div>
+            <div class="multi_descriptions_child">
+              <div class="multi_descriptions_image_container">
+                <img src="./assets/desc_lists/image7.png" alt="">
+              </div>
+              <h3>Comprehensive Due Diligence
+              </h3>
+              <div class="multi_descriptions_image_descriptions">
+                <p>Analyses the property documents and compliance issues
+                  Verifies title search and mortgage checks
+                  Used for property valuation reports and verifying documents</p>
+              </div>
+            </div>
+            <div class="multi_descriptions_child">
+              <div class="multi_descriptions_image_container">
+                <img src="./assets/desc_lists/image8.png" alt="">
+              </div>
+              <h3>Project Monitoring Report
+              </h3>
+              <div class="multi_descriptions_image_descriptions">
+                <p>Meant especially for under-construction projects
+                  Tracks the developments and recent transactions
+                  Includes legal permissions and litigation queries</p>
+              </div>
+            </div>
+            <div class="multi_descriptions_child">
+              <div class="multi_descriptions_image_container">
+                <img src="./assets/desc_lists/image9.png" alt="">
+              </div>
+              <h3>Litigation Search
+              </h3>
+              <div class="multi_descriptions_image_descriptions">
+                <p>Refers to actions contested in court
+                  Investigates charges levied on property sellers
+                  Deals with active, pending and disposed off cases</p>
+              </div>
+            </div>
+            <div class="multi_descriptions_child">
+              <div class="multi_descriptions_image_container">
+                <img src="./assets/desc_lists/image10.png" alt="">
+              </div>
+              <h3>Title Search
+              </h3>
+              <div class="multi_descriptions_image_descriptions">
+                <p>Determines Various facets of a property history
+                  Helps In assessing the present titleholder
+                  Examines public records to confirm ownership of property
+                  </p>
+              </div>
+            </div>
+          </div>
+        </section>
     </main>
     
     <footer class="footer">
+      <img class="footer_hand_photo" src="./assets/Hand_photo_footer.png" alt="">
+      <button class="blue-btn top_btn" onclick="openPopup()">Book Free Consultation</button>
+
+      <div id="popup" class="popup-overlay" onclick="closePopup()">
+        <div class="popup-content" onclick="event.stopPropagation()">
+          <div id="inner_content_wrapper">
+            <div class="pop_up_heading">
+              <h5>Please share your details</h5>
+            </div>
+            <input type="text" id="name">
+            <input type="number" placeholder="Enter mobile number">
+            <input type="email" placeholder="Email ID">
+            <input type="text" placeholder="Property Type">
+            <div class="terms-container">
+              <input type="checkbox" id="terms-checkbox">
+              <label for="terms-checkbox">By submitting this form, I accept and agree to Realezi’s T&C</label>
+            </div>
+            <button id="submit_btn" class="close-btn" onclick="submitPopup()">Submit</button>
+          </div>
+          <div id="inner_content_after_submit">
+            <video src="./assets/Realezi-arrow-loader.mp4" autoplay loop muted></video>
+          </div>
+        </div>
+      </div>
+      
         <div class="container">
           <div class="upper-footer">
             <div class="columns d-flex align-items-start justify-content-between my-3">
@@ -114,7 +264,9 @@
                 </h3>
                 <button class="white-btn">Try it yourself</button>
               </div>
+              
               <div class="">
+                
                 <div>
                   <h4 class="d-flex align-items-center">Company <span class="d-block d-sm-none mx-2 mb-1"><svg width="14"
                         height="10" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -330,6 +482,21 @@
             }
 
             requestAnimationFrame(raf)
+            function openPopup() {
+  document.getElementById("popup").style.display = "flex";
+  document.body.style.overflow = "hidden"; // Disable scrolling
+}
+
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+  document.getElementById("inner_content_wrapper").style.display = "flex";
+  document.getElementById("inner_content_after_submit").style.display = "none";
+}
+function submitPopup() {
+  document.getElementById("inner_content_wrapper").style.display = "none";
+  document.getElementById("inner_content_after_submit").style.display = "flex";
+}
+
     </script>
 </body>
 </html>

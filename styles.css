@@ -356,18 +356,39 @@ html.lenis, html.lenis body {
   }
 
   .explore_our_experties{
-    height: 32px;
+    height: 35px;
     width: 11rem;
     font-size: 1rem;
     color: white;
     background-color: #111f3c;
     border: none;
     border-radius: 50px;
-    padding-bottom: 3px;
+    padding: 5px 0px;
   }
+   
+  .explore_our_experties:hover {
+    background-position: right center;
+    background-size: 200% auto;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+   }
+   
+   @keyframes pulse512 {
+    0% {
+     box-shadow: 0 0 0 0 #111f3c;
+    }
+   
+    70% {
+     box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+    }
+   
+    100% {
+     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+    }
+   }
 
   .free_consultation{
-    height: 32px;
+    height: 35px;
     width: 15rem;
     color: #111f3c;
     background-color: white;
@@ -460,6 +481,7 @@ html.lenis, html.lenis body {
  flex-direction: column;
  align-items: center;
  justify-content: center;
+ margin-bottom: 5rem;
 }
 
 .legal_aid_logo_main_wrapper {
@@ -504,30 +526,108 @@ html.lenis, html.lenis body {
 
 .below_legal_aid_three_descriptions {
   display: flex;
-  width: 90%;
+  flex-wrap: wrap;
+  width: 85%;
   margin-bottom: 45px;
 }
 
 .three_sub_descriptions {
-  padding: 3rem 4rem;
+  width: 22rem;
+  padding: 3rem 3rem;
 }
 
 .description_heading {
  font-size: 1.2rem;
  color: #111f3c;
- padding-right: 50px;
+ padding-right: 10px;
  font-weight: 600;
 }
 
 .description_body {
   padding-top: 20px;
- font-size: 1rem;
+ font-size: 0.9rem;
  color: #616161;
 }
 
 #middle_description {
   border-left: 1px solid #111f3c;
   border-right: 1px solid #111f3c;
+}
+
+
+
+
+/* Container for the last section */
+.last_section {
+  height: 85rem;
+  padding: 0px 10%;
+}
+
+
+/* Wrapper for multiple description items */
+.multi_descriptions_wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 5rem;
+}
+
+/* Individual description child items */
+.multi_descriptions_child {
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.171);
+  padding: 15px;
+  height: 10rem;
+  width: 31rem; 
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+.multi_descriptions_child:hover{
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.411);
+}
+
+.multi_descriptions_child h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+/* Image container styling */
+.multi_descriptions_image_container {
+  position: absolute;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.295);
+  top: -15%;
+  left: 5%;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #ECEFF9;
+}
+
+.multi_descriptions_image_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Description text under image */
+.multi_descriptions_image_descriptions {
+  padding: 0px 1rem;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.multi_descriptions_image_descriptions p {
+  margin: 0;
 }
 
 
@@ -541,9 +641,135 @@ html.lenis, html.lenis body {
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   position: relative;
-  margin-top: -45px;
-  padding: 55px 10px 20px 10px;
+  padding: 35px 10px 20px 10px;
 }
+
+.footer_hand_photo{
+  position: absolute;
+  top: -15%;
+  left: 10%;
+  width: 20rem;
+}
+
+/* Fullscreen overlay for the popup */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Popup content */
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  width: 400px;
+  height: 370px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color:#111f3c;
+  border-radius: 15px;
+  position: relative;
+  z-index: 10000;
+  
+}
+
+#inner_content_wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#inner_content_after_submit{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+#inner_content_after_submit video{
+ width: 20rem;
+}
+
+.pop_up_heading{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.pop_up_heading h5{
+  font-size: 1rem;
+}
+
+/* Input fields styling */
+.popup-content input[type="text"],
+.popup-content input[type="number"],
+.popup-content input[type="email"] {
+  display: block;
+  width: 90%;
+  padding: 5px;
+  padding-left: 15px;
+  margin: 8px 0;
+  border-radius: 3px;
+  border: 1px solid #51515177;
+  font-size: 0.8rem;
+  box-sizing: border-box;
+}
+
+/* Checkbox and terms container */
+.terms-container {
+  margin-top: 15px;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.terms-container input[type="checkbox"] {
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.terms-container label {
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Close button styling */
+.close-btn {
+  background-color: #111f3c;
+  color: white;
+  border: none;
+  padding: 8px;
+  width: 95%;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 0.8rem;
+}
+
+/* Scroll behavior inside popup */
+.popup-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .popup-content {
+    width: 90%;
+  }
+}
+
 
 .footer .upper-footer ul {
   padding-left: 0;
@@ -639,6 +865,12 @@ html.lenis, html.lenis body {
   flex-wrap: nowrap;
   display: flex;
   position: relative;
+}
+
+.top_btn{
+  margin-left: 30rem;
+  margin-bottom: 3rem;
+  padding: 8px 20px !important;
 }
 
 .footer .refer-btn {
