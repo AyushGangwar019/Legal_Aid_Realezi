@@ -60,7 +60,7 @@
                      </div>
                      <div class="proposal_btn_container">
                         <button class="explore_our_experties">Explore our expertise</button>
-                        <button class="free_consultation">
+                        <button class="free_consultation" onclick="openPopup()">
                             Free Consultation
                             <img src="./assets/Vector.png" alt="">
                         </button>
@@ -237,21 +237,64 @@
             <div class="pop_up_heading">
               <h5>Please share your details</h5>
             </div>
-            <input type="text" id="name">
-            <input type="number" placeholder="Enter mobile number">
-            <input type="email" placeholder="Email ID">
-            <input type="text" placeholder="Property Type">
+      
+            <div class="input-container">
+              <input type="text" id="name" autocomplete="off" oninput="checkForm()" onfocus="handleInputEvent(this, 'focus')" onblur="handleInputEvent(this, 'blur')">
+              <label for="name" class="floating-label">Name</label>
+            </div>
+            
+            <div class="input-container number_input_container">
+              <div class="country-code-container">
+                <select id="country-code" onchange="updateMobilePlaceholder()">
+                  <option value="+91">+91</option>
+                  <option value="+1">+1</option>
+                  <option value="+44">+44</option>
+                  <option value="+81">+81</option>
+                  <option value="+61">+61</option>
+                </select>
+              </div>
+              <input type="number" id="mobile" oninput="checkForm()" onfocus="handleInputEvent(this, 'focus')" onblur="handleInputEvent(this, 'blur')">
+              <label for="mobile" class="floating-label">Enter mobile number</label>
+            </div>
+            
+            
+            <div class="input-container">
+              <input type="email" id="email" autocomplete="off" oninput="checkForm()" onfocus="handleInputEvent(this, 'focus')" onblur="handleInputEvent(this, 'blur')">
+              <label for="email" class="floating-label">Email ID</label>
+            </div>
+            
+            <div class="input-container poperty_input_container">
+              <input type="text" id="property" autocomplete="off" oninput="checkForm()" onfocus="handleInputEvent(this, 'focus')" onblur="handleInputEvent(this, 'blur')" onclick="toggleDropdown()">
+              <label for="property" class="floating-label">Property Type</label>
+              <span class="arrow"></span>
+              
+              <!-- Dropdown list -->
+              <ul id="property-options" class="dropdown-options">
+                <li onclick="selectOption('House')">House</li>
+                <li onclick="selectOption('Apartment')">Apartment</li>
+                <li onclick="selectOption('Land')">Land</li>
+              </ul>
+            </div>
+            
+            
             <div class="terms-container">
-              <input type="checkbox" id="terms-checkbox">
+              <input type="checkbox" id="terms-checkbox" onchange="checkForm()">
               <label for="terms-checkbox">By submitting this form, I accept and agree to Realezi’s T&C</label>
             </div>
-            <button id="submit_btn" class="close-btn" onclick="submitPopup()">Submit</button>
+            
+            <button id="submit_btn" class="close-btn" onclick="submitPopup()" disabled>Submit</button>
           </div>
+          
           <div id="inner_content_after_submit">
-            <video src="./assets/Realezi-arrow-loader.mp4" autoplay loop muted></video>
+            <div class="after_submit_video_container">
+              <video src="./assets/Realezi-arrow-loader.mp4" autoplay muted></video>
+              <span>Great!</span>
+              <p>Our Dedicated Relationship Manager will contact you shortly</p>
+            </div>
           </div>
         </div>
       </div>
+      
       
         <div class="container">
           <div class="upper-footer">
@@ -482,9 +525,8 @@
             }
 
             requestAnimationFrame(raf)
-            function openPopup() {
+function openPopup() {
   document.getElementById("popup").style.display = "flex";
-  document.body.style.overflow = "hidden"; // Disable scrolling
 }
 
 function closePopup() {
@@ -492,10 +534,65 @@ function closePopup() {
   document.getElementById("inner_content_wrapper").style.display = "flex";
   document.getElementById("inner_content_after_submit").style.display = "none";
 }
+
+
 function submitPopup() {
   document.getElementById("inner_content_wrapper").style.display = "none";
   document.getElementById("inner_content_after_submit").style.display = "flex";
+  const popupContent = document.querySelector('.popup-content');
+  popupContent.style.width = '450px';  // Set the new width
+  popupContent.style.height = '400px';
 }
+
+function handleInputEvent(input, eventType) {
+  if (eventType === 'focus') {
+    input.nextElementSibling.classList.add('active');
+  } else if (eventType === 'blur') {
+    if (input.value === '') {
+      input.nextElementSibling.classList.remove('active');
+      input.classList.remove('has-value');
+    } else {
+      input.classList.add('has-value');
+    }
+  }
+}
+
+function checkForm() {
+  const name = document.getElementById('name').value;
+  const mobile = document.getElementById('mobile').value;
+  const email = document.getElementById('email').value;
+  const property = document.getElementById('property').value;
+  const termsChecked = document.getElementById('terms-checkbox').checked;
+  
+  const submitBtn = document.getElementById('submit_btn');
+
+  if (name && mobile && email && property && termsChecked) {
+    submitBtn.disabled = false;
+    submitBtn.style.backgroundColor= "#111f3c";
+  } else {
+    submitBtn.disabled = true;
+  }
+}
+
+function toggleDropdown() {
+  const dropdown = document.getElementById('property-options');
+  const arrow = document.querySelector('.arrow');
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+  arrow.classList.toggle('rotate');
+  const popupContent = document.querySelector('.popup-content');
+  popupContent.style.height = 'auto'; // Set to 'auto' to allow height to adjust
+  popupContent.style.height = `${popupContent.scrollHeight}px`;
+}
+
+function selectOption(value) {
+  const input = document.getElementById('property');
+  input.value = value;
+  input.classList.add('has-value');
+  toggleDropdown(); // Close dropdown after selection
+  
+}
+
+
 
     </script>
 </body>
