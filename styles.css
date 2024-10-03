@@ -789,7 +789,6 @@ html.lenis, html.lenis body {
 .below_legal_aid_three_descriptions {
   display: flex;
   flex-wrap: wrap;
-  width: 85%;
   margin-bottom: 45px;
 }
 
@@ -1117,7 +1116,7 @@ margin-top: 8rem;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.171);
   padding: 15px;
   height: 10rem;
-  width: 28rem; 
+  width: 48%; 
   text-align: center;
   position: relative;
   margin-bottom: 30px;
