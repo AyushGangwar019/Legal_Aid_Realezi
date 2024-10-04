@@ -1342,7 +1342,7 @@ margin-top: 8rem;
 
 /* Fullscreen overlay for the popup */
 .popup-overlay {
-  display: flex;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -1472,10 +1472,12 @@ animation: transitonAnimation 0.5s forwards 5s;
 }
 .property_sub_types{
   border-radius: 50px;
-  border: 2px solid #111f3c;
+  border: 2px solid #8b8c8d;
+  color: #8b8c8d;
   padding: 2px 10px;
   font-size: 0.8rem;
   margin: 5px;
+  cursor: pointer;
 }
 
 .hide_property_type{
@@ -1484,7 +1486,8 @@ animation: transitonAnimation 0.5s forwards 5s;
 
 /* Checkbox and terms container */
 .terms-container {
-  margin-top: 10px;
+  width: 100%;
+  margin-left: 50px;
   display: flex;
   align-items: flex-start;
   text-align: left;
@@ -1492,7 +1495,7 @@ animation: transitonAnimation 0.5s forwards 5s;
 
 .terms-container input[type="checkbox"] {
   margin-right: 10px;
-  margin-top: 5px;
+  margin-top: 7px;
 }
 
 .terms-container label {
@@ -1502,31 +1505,7 @@ animation: transitonAnimation 0.5s forwards 5s;
   padding-top: 2px;
 }
 
-.terms-container input[type="checkbox"] {
-  margin-right: 10px;
-  margin-top: 5px;
-  appearance: none; /* Hide default checkbox */
-  width: 16px;
-  height: 16px;
-  border: 1px solid black; /* Simple 1px solid black border */
-  border-radius: 3px;
-  cursor: pointer;
-  position: relative;
-}
 
-.terms-container input[type="checkbox"]:checked {
-  background-color: #111f3c; /* Optional: Change background when checked */
-  border: 1px solid black;
-}
-
-.terms-container input[type="checkbox"]:checked::before {
-  content: '✔';
-  position: absolute;
-  top: -2px;
-  left: 2px;
-  font-size: 12px;
-  color: white;
-}
 
 /* Close button styling */
 .close-btn {
@@ -1596,7 +1575,7 @@ input.has-value + .floating-label {
 
 .number_input_container .floating-label {
   position: absolute;
-  top: 50% !important;
+  top: 50%;
   left: 6rem;
   transform: translateY(-50%);
   font-size: 1rem;
